@@ -22,14 +22,18 @@ const pool = new Pool(
 
 pool.connect();
 
-inquirer.prompt([
-  {
-    type: 'list',
-    name: 'options',
-    message: 'What would you like to do?',
-    choices: Object.keys(optionsLookup),
-  },
-]);
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'options',
+      message: 'What would you like to do?',
+      choices: Object.keys(optionsLookup),
+    },
+  ])
+  .then(({ options }) => {
+    optionsLookup[options]();
+  });
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:3001/`);
