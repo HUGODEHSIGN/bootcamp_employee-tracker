@@ -38,3 +38,5 @@ inquirer
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:3001/`);
 });
+
+export default pool;
