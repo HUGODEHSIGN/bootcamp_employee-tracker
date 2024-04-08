@@ -3,6 +3,7 @@ import addEmployee from './options/addEmployee.js';
 import updateEmployeeRole from './options/updateEmployeeRole.js';
 import viewAllRoles from './options/viewAllRoles.js';
 import addRole from './options/addRole.js';
+import viewAllDepartments from './options/viewAllDepartments.js';
 
 function placeholder() {
   console.log('here');
@@ -14,7 +15,7 @@ const optionsLookup = {
   'Update Employee Role': updateEmployeeRole,
   'View All Roles': viewAllRoles,
   'Add Role': addRole,
-  'View All Departments': placeholder,
+  'View All Departments': viewAllDepartments,
   'Add Department': placeholder,
 };
 
