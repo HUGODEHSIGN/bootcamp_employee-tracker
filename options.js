@@ -5,10 +5,7 @@ import viewAllRoles from './options/viewAllRoles.js';
 import addRole from './options/addRole.js';
 import viewAllDepartments from './options/viewAllDepartments.js';
 import addDepartment from './options/addDepartment.js';
-
-function placeholder() {
-  console.log('here');
-}
+import quit from './options/quit.js';
 
 const optionsLookup = {
   'View All Employees': viewAllEmployees,
@@ -18,6 +15,7 @@ const optionsLookup = {
   'Add Role': addRole,
   'View All Departments': viewAllDepartments,
   'Add Department': addDepartment,
+  Quit: quit,
 };
 
 export default optionsLookup;
