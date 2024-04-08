@@ -1,5 +1,7 @@
 import express from 'express';
 import pgk from 'pg';
+import inquirer from 'inquirer';
+import optionsLookup from './options.js';
 const { Pool } = pgk;
 
 const PORT = process.env.PORT || 3001;
@@ -19,6 +21,15 @@ const pool = new Pool(
 );
 
 pool.connect();
+
+inquirer.prompt([
+  {
+    type: 'list',
+    name: 'options',
+    message: 'What would you like to do?',
+    choices: Object.keys(optionsLookup),
+  },
+]);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:3001/`);
