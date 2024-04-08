@@ -1,4 +1,4 @@
-import pool from '../server.js';
+import pool, { mainMenu } from '../server.js';
 import inquirer from 'inquirer';
 export default async function addEmployee() {
   try {
@@ -52,6 +52,7 @@ export default async function addEmployee() {
         console.log(`Added ${first} ${last} to the database`);
       }
     );
+    mainMenu();
   } catch (err) {
     console.error(err);
   }

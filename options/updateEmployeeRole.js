@@ -1,4 +1,4 @@
-import pool from '../server.js';
+import pool, { mainMenu } from '../server.js';
 import inquirer from 'inquirer';
 export default async function updateEmployeeRole() {
   try {
@@ -42,7 +42,7 @@ export default async function updateEmployeeRole() {
       }
     );
 
-    console.log(employeeId, roleId);
+    mainMenu();
   } catch (err) {
     console.error(err);
   }

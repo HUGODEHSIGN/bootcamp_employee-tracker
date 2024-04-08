@@ -1,4 +1,4 @@
-import pool from '../server.js';
+import pool, { mainMenu } from '../server.js';
 
 export default function viewAllEmployees() {
   pool.query(
@@ -14,7 +14,12 @@ export default function viewAllEmployees() {
     JOIN department ON role.department = department.id
     LEFT JOIN employee AS manager ON employee.manager_id = manager.id;`,
     (err, { rows }) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
       console.table(rows);
     }
   );
+  mainMenu();
 }

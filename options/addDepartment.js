@@ -1,4 +1,4 @@
-import pool from '../server.js';
+import pool, { mainMenu } from '../server.js';
 import inquirer from 'inquirer';
 
 export default async function addDepartment() {
@@ -22,6 +22,7 @@ export default async function addDepartment() {
         console.log(`Added ${department} to the database`);
       }
     );
+    mainMenu();
   } catch (err) {
     console.error(err);
   }

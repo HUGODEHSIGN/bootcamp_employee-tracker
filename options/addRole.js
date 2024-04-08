@@ -1,4 +1,4 @@
-import pool from '../server.js';
+import pool, { mainMenu } from '../server.js';
 import inquirer from 'inquirer';
 
 export default async function addRole() {
@@ -41,6 +41,7 @@ export default async function addRole() {
         console.log(`Added ${title} to the database`);
       }
     );
+    mainMenu();
   } catch (err) {
     console.error(err);
   }
